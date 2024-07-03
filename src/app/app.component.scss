@@ -1,0 +1,78 @@
+
+/* Variables for colors and spacing */
+$primary-color: #001529;
+$hover-color: #1890ff;
+$white-color: #fff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$padding: 1rem;
+$font-family: Arial, sans-serif;
+
+/* General styling */
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: $hover-color;
+}
+
+/* Header styling */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding 2rem;
+  background-color: $primary-color;
+  color: $white-color;
+  box-shadow: 0 2px 8px $shadow-color;
+
+  .navbar-tittle a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $white-color;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      font-size: 1rem;
+      color: $white-color;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba($white-color, 0.2);
+      }
+    }
+
+    .active {
+      background-color: $hover-color;
+      color: $white-color !important;
+    }
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav-links {
+      margin-top: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
