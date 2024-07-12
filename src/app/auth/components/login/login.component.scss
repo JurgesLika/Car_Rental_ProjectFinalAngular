@@ -1,0 +1,35 @@
+/* signup.component.scss */
+
+.bg {
+    background-color: aliceblue;
+    height: 100vh; /* Example: Set height as per your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .parent {
+    width: 100%; /* Example: Adjust width as per your design */
+    text-align: center;
+  }
+  
+  .child {
+    padding: 20px; /* Example: Adjust padding as per your design */
+    background-color: white;
+    border-radius: 8px; /* Example: Adjust border radius as per your design */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Example: Adjust box shadow as per your design */
+  }
+  
+  .imgDiv {
+    margin-bottom: 20px; /* Example: Adjust margin as per your design */
+  }
+  
+  .login-form-button {
+    width: 100%; /* Example: Adjust button width as per your design */
+  }
+  
+  .login-form-margin {
+    margin-left: 8px; /* Example: Adjust margin as per your design */
+    margin-right: 8px; /* Example: Adjust margin as per your design */
+  }
+  
