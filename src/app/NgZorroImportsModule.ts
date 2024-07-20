@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 
@@ -22,7 +23,8 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
         NzLayoutModule,
         NzSelectModule,
         NzDatePickerModule,
-        NzTimePickerModule
+        NzTimePickerModule,
+        NzTableModule
     
     ]
 })

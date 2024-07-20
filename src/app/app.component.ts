@@ -14,6 +14,7 @@ export class AppComponent {
 
   isCustomerLoggedIn: boolean = StorageService.isCustomerLoggedIn();
   isAdminLoggedIn: boolean = StorageService.isAdminLoggedIn();
+  loading: any;
 
   constructor(private router: Router){}
 

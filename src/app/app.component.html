@@ -1,38 +1,55 @@
-<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn" >
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-tittle">
-      <a routerLink="/login">Car Rental Service</a>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a>
-      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
-    </div>
-  </nz-header>                                                                            
-</div>
+<div class="main-wrapper" [ngClass]="{'admin-logged-in': isAdminLoggedIn, 'customer-logged-in': isCustomerLoggedIn}">
+  <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+    <nz-header class="main-header custom-navbar" nz-row nzType="flex">
+      <div class="navbar-title">
+        <a routerLink="/login">Car Rental Service</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+        <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+      </div>
+    </nz-header>
+  </div>
 
-<div *ngIf="isAdminLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-tittle">
-      <a routerLink="/login">LoggedIn Admin</a>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" routerLink="/admin/car" routerLinkActive="active">Post Car</a>
-      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
-    </div>
-  </nz-header>
-</div>
+  <div *ngIf="isAdminLoggedIn">
+    <nz-header class="main-header custom-navbar" nz-row nzType="flex">
+      <div class="navbar-title">
+        <a routerLink="/login">Admin Panel</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+        <a nz-button nzType="link" routerLink="/admin/car" routerLinkActive="active">Post Car</a>
+        <a nz-button nzType="link" routerLink="/admin/bookings" routerLinkActive="active">Bookings</a>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+      </div>
+    </nz-header>
+  </div>
 
-<div *ngIf="isCustomerLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-tittle">
-      <a routerLink="/login">LoggedIn Customer</a>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
-    </div>
-  </nz-header>
-</div>
+  <div *ngIf="isCustomerLoggedIn">
+    <nz-header class="main-header custom-navbar" nz-row nzType="flex">
+      <div class="navbar-title">
+        <a routerLink="/login">Customer Panel</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">All Cars</a>
+        <a nz-button nzType="link" routerLink="/customer/my_bookings" routerLinkActive="active">My Bookings</a>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+      </div>
+    </nz-header>
+  </div>
 
-<router-outlet></router-outlet>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <nz-footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
+      <div class="footer-links">
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+        <a routerLink="/terms-of-service">Terms of Service</a>
+        <a routerLink="/contact-us">Contact Us</a>
+      </div>
+    </div>
+  </nz-footer>
+</div>

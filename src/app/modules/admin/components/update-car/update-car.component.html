@@ -1,0 +1,95 @@
+<div style="margin-top: 150px">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+      <div class="parent">
+        <div class="child">
+          <div nz-row class="imgDiv">
+            <h2 style="margin-left: 230px;">Update Car</h2>
+          </div>
+  
+          <form nz-form [formGroup]="updateForm" >
+            <div nz-row>
+              <div class="file-upload-container">
+               <label class="file-upload-label">
+                  <span style="margin-left: 100px;">Select a File</span>
+                  <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg"
+                   (change)="onFileSelected($event)"/>
+                </label>
+
+                <div *ngIf="imagePreview" class="image-preview">
+                  <div class="circle-image">
+                    <img [src]="imagePreview" alt="Existing Image" class="preview-image"/>
+                  </div>
+                </div>
+
+                <div *ngIf="existingImage" class="image-preview">
+                  <div class="circle-image">
+                    <img [src]="existingImage" alt="Existing Image" class="preview-image"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is Required!!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand Name" formControlName="brand">
+                    <nz-option *ngFor="let brand of listOfBrands" [nzLabel]="brand" [nzValue]="brand"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input is Required!!">
+                  <input nz-input placeholder="Name" formControlName="name"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback nzErrorTip="This Input is Required!!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type">
+                    <nz-option *ngFor="let type of listOfType" [nzLabel]="type" [nzValue]="type"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback nzErrorTip="This Input is Required!!">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission" formControlName="transmission">
+                    <nz-option *ngFor="let transmission of listOfTransmission" [nzLabel]="transmission" [nzValue]="transmission"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This inpit is required">
+                  <nz-year-picker style="width: 100%" nzPlaceHolder="Model Year" formControlName="year" style="width: 100%;"></nz-year-picker>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is Required!!">
+                  <input nz-input placeholder="Price" formControlName="price"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is Required!!">
+                  <textarea rows="1" nz-input placeholder="Description" formControlName="description"></textarea>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+             (click)="updateCar()">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+  

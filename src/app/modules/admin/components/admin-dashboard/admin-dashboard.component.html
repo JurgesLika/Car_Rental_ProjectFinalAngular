@@ -1,1 +1,30 @@
-<p>admin-dashboard works!</p>
+<div style="background-color: rgb(197, 202, 224);">
+    <div style="padding-top: 10px;"></div>
+    
+    <div style="margin-top: 10px;" class="child" *ngFor="let car of cars"  >
+      <div nz-row>
+        <div nz-col nzSpan="8">
+          <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" src="{{car.processedImg}}"
+               alt="profile"/>
+        </div>
+        <div nz-col nzSpan="16">
+          <h2 style="cursor: pointer; color:rgb(50, 27, 177);">
+            {{car.brand}}-{{car.name}}
+          </h2>
+          <p>{{car.description}}</p>
+          <hr>
+          <h5>Price : <b>${{car.price}}</b> - Transmission : 
+            <b>{{car.transmission}}</b> - Type : <b>{{car.type}}</b> - Year : <b>{{car.year | date: 'yyyy'}}</b>
+          </h5>
+          <hr>
+          <div style="float: right;">
+            <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" 
+            (click)="deleteCar(car.id)">Delete</button>
+            <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" 
+            routerLink="/admin/car/{{car.id}}" nzDanger>Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

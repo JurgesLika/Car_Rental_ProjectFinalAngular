@@ -25,7 +25,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

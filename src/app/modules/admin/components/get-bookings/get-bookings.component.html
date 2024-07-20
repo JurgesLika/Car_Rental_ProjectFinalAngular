@@ -1,0 +1,45 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <nz-table [nzData]="bookings" [nzPageSize]="20" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th style="font-weight: bolder; color: blueviolet;">Username</th>
+          <th style="font-weight: bolder; color: blueviolet;">Email</th>
+          <th style="font-weight: bolder; color: blueviolet;">From Date</th>
+          <th style="font-weight: bolder; color: blueviolet;">To Date</th>
+          <th style="font-weight: bolder; color: blueviolet;">Days</th>
+          <th style="font-weight: bolder; color: blueviolet;">Price</th>
+          <th style="font-weight: bolder; color: blueviolet;">Status</th>
+          <th style="font-weight: bolder; color: blueviolet;">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{booking.username}}</td>
+          <td>{{booking.email}}</td>
+          <td>{{booking.formDate | date: 'MMM d, y'}}</td>
+          <td>{{booking.toDate | date: 'MMM d, y'}}</td>
+          <td>{{booking.days}}</td>
+          <td>{{booking.price}}</td>
+          <td>
+            <strong [ngStyle]="{
+              'color': booking.bookCarStatus === 'APPROVED' ? 'green' :
+                        booking.bookCarStatus === 'REJECTED' ? 'red' :
+                        'orange'
+            }">
+              {{ booking.bookCarStatus }}
+            </strong>
+          </td>
+       <td>
+            <span *ngIf="booking.bookCarStatus == 'PENDING'">
+                <button style="margin-left: 10PX;" nzSize="small" nz-button nzType="primary"
+                  (click)="changeBookingStatus(booking.id,'Approve')">Approve</button>
+                  <button style="margin-left: 10PX;" nzSize="small" nz-button nzType="primary"
+                  (click)="changeBookingStatus(booking.id,'Reject')" nzDanger>Reject</button>
+            </span>
+        </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-spin>
+  
