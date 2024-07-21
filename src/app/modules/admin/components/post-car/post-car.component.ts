@@ -17,7 +17,7 @@ export class PostCarComponent implements OnInit {
   listOfOption: Array<{ label: string; value: string }> = [];
   listOfType = ["Petrol", "Diesel", "Electric", "Hybrid"];
   listOfTransmission = ["Manual", "Automatic"];
-  listOfBrands = ["BMW", "AUDI", "MERCEDES", "OPEL", "TOYOTA", "HONDA", "FORD", "NISSAN", "HYUNDAI", "FIAT"];
+  listOfBrands = ["BMW", "AUDI", "MERCEDES", "OPEL", "TOYOTA", "HONDA", "FORD", "NISSAN", "HYUNDAI", "FIAT","LAND ROVER"];
 
   constructor(
     private fb: FormBuilder,

@@ -1,47 +1,45 @@
 <div style="background-color: antiquewhite;" *ngIf="car">
-    <div style="padding-top: 10px;"></div>
-    <div style="margin-top: 10px;" class="child">
-      <div nz-row>
-        <div nz-col nzSpan="8">
-          <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="processedImg" alt="profile"/>
-        </div>
-        <div nz-col nzSpan="16">
-          <h2 style="cursor: pointer; color:aquamarine;">
-            {{car.brand}} - {{car.name}}
-          </h2>
-          <p>{{car.description}}</p>
-          <hr>
-          <h5>
-            Price : <b>${{car.price}}</b> - Transmission : 
-            <b>{{car.transmission}}</b> - Type : <b>{{car.type}}</b> - Year : <b>{{car.year | date: 'yyyy'}}</b>
-          </h5>
-          <hr>
-        </div>
+  <div style="padding-top: 10px;"></div>
+  <div style="margin-top: 10px;" class="child">
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="processedImg" alt="profile"/>
+      </div>
+      <div nz-col nzSpan="16">
+        <h2 style="cursor: pointer; color:aquamarine;">
+          {{car.brand}} - {{car.name}}
+        </h2>
+        <p>{{car.description}}</p>
+        <hr>
+        <h5>
+          Price : <b>${{car.price}}</b> - Transmission : 
+          <b>{{car.transmission}}</b> - Type : <b>{{car.type}}</b> - Year : <b>{{car.year | date: 'yyyy'}}</b>
+        </h5>
+        <hr>
       </div>
     </div>
-    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working..." style="margin-top: 50px;">
-      <div class="dashboard-filter">
-        <form [formGroup]="validateForm">
-          <div class="filter-select-dropdown filter-fields-width">
-            <nz-form-item style="margin-left: 50px;">
-              <nz-form-label [nzSpan]="0" nzFor="From Date">From Date</nz-form-label>
-              <nz-form-control [nzSpan]="0">
-                <nz-date-picker formControlName="fromDate" style="width: 100%;" nzPlaceHolder="From Date" [nzFormat]="dateFormat" id="From Date"></nz-date-picker>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item style="margin-left: 100px;">
-              <nz-form-label [nzSpan]="0" nzFor="To Date">To Date</nz-form-label>
-              <nz-form-control [nzSpan]="0">
-                <nz-date-picker formControlName="toDate" style="width: 100%;" nzPlaceHolder="To Date" [nzFormat]="dateFormat" id="To Date"></nz-date-picker>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div class="filter-select-dropdown filter-fields-width">
-            <button class="filterBtn" style="margin-left: 45px;" nz-button nzType="primary" (click)="bookACar(validateForm.value)">Book Car</button>
-          </div>
-        </form>
-      </div>
-    </nz-spin>
   </div>
-  
-  
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working..." style="margin-top: 50px;">
+    <div class="dashboard-filter">
+      <form [formGroup]="validateForm" (ngSubmit)="bookACar(validateForm.value)">
+        <div class="filter-select-dropdown filter-fields-width">
+          <nz-form-item style="margin-left: 50px;">
+            <nz-form-label nzFor="fromDate">From Date</nz-form-label>
+            <nz-form-control>
+              <nz-date-picker formControlName="fromDate" style="width: 100%;" nzPlaceHolder="From Date" [nzFormat]="dateFormat" id="fromDate"></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item style="margin-left: 100px;">
+            <nz-form-label nzFor="toDate">To Date</nz-form-label>
+            <nz-form-control>
+              <nz-date-picker formControlName="toDate" style="width: 100%;" nzPlaceHolder="To Date" [nzFormat]="dateFormat" id="toDate"></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div class="filter-select-dropdown filter-fields-width">
+          <button class="filterBtn" style="margin-left: 45px;" nz-button nzType="primary" type="submit">Book Car</button>
+        </div>
+      </form>
+    </div>
+  </nz-spin>
+</div>

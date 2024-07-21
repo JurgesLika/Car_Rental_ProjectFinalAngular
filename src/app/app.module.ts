@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { NgZorroImportsModule } from './NgZorroImportsModule';
+import { FirstPageComponent } from './firstPage/first-page/first-page.component';
 
 
 
@@ -26,6 +27,7 @@ registerLocaleData(en);
     AppComponent,
     LoginComponent,
     SignupComponent,
+    FirstPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,10 +36,6 @@ registerLocaleData(en);
     ReactiveFormsModule,
     HttpClientModule,
     NgZorroImportsModule
-
-   
-
-
   ],
   providers: [
     provideClientHydration(),

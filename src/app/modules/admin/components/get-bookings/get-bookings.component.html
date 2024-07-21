@@ -17,7 +17,7 @@
         <tr *ngFor="let booking of bookings">
           <td>{{booking.username}}</td>
           <td>{{booking.email}}</td>
-          <td>{{booking.formDate | date: 'MMM d, y'}}</td>
+          <td>{{booking.fromDate | date: 'MMM d, y'}}</td>
           <td>{{booking.toDate | date: 'MMM d, y'}}</td>
           <td>{{booking.days}}</td>
           <td>{{booking.price}}</td>

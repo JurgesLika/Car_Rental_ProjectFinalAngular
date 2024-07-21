@@ -23,7 +23,7 @@ export class CustomerDashboardComponent {
       console.log('API Response:', res);
       // Assuming res is an array of cars directly
       res.forEach((element: any) => {
-        element.processedImg = 'data:image/jpeg;base64,' + element.returedImage;
+        element.processedImg = 'data:image/jpeg;base64,' + element.returnedImage;
         this.cars.push(element);
       });
     }, (error: any) => {

@@ -31,9 +31,8 @@ export class BookCarComponent {
 
   ngOnInit(){
     this.validateForm = this.fb.group({
-      toDate:[null,Validators.required],
       fromDate:[null,Validators.required],
-
+      toDate:[null,Validators.required],
     })
     this.getCarById();
 
@@ -42,7 +41,7 @@ export class BookCarComponent {
   getCarById(){
     this.service.getCarById(this.carId).subscribe((res)=>{
       console.log(res);
-      this.processedImg = 'data:image/jpeg;base64, ' + res.returedImage;
+      this.processedImg = 'data:image/jpeg;base64, ' + res.returnedImage;
       this.car = res;
     })
   }
@@ -51,8 +50,8 @@ export class BookCarComponent {
     console.log(data); // Kontrolloni të dhënat që po dërgoni
     this.isSpinning = true;
     let bookACarDto = {
-      toDate: data.toDate,
       fromDate: data.fromDate,
+      toDate: data.toDate,
       userId: StorageService.getUserId(),
       carId: this.carId
     };
