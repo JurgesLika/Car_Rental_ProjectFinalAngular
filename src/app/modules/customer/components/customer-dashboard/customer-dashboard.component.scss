@@ -1,58 +1,46 @@
-.container {
-    background-color: antiquewhite;
-    padding-top: 10px;
-  
-    .child {
-      margin-top: 10px;
-  
-      nz-row {
-        display: flex;
-        align-items: center;
-  
-        nz-col {
-          &.profile-col {
-            flex: 0 0 200px;
-            max-width: 200px;
-  
-            .profile {
-              height: 130px;
-              width: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-            }
-          }
-  
-          &.details-col {
-            flex: 1;
-            padding-left: 20px;
-  
-            h2 {
-              cursor: pointer;
-              color: aquamarine;
-              margin: 0;
-              font-size: 1.5rem;
-            }
-  
-            p {
-              margin: 10px 0;
-            }
-  
-            hr {
-              border: none;
-              border-top: 1px solid #ccc;
-              margin: 10px 0;
-            }
-  
-            h5 {
-              margin: 10px 0;
-  
-              b {
-                font-weight: bold;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
+.car-list {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.car-item {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.car-image {
+  height: 130px;
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.car-title {
+  font-size: 24px;
+  color: rgb(71, 94, 168);
+  cursor: pointer;
+  margin: 0;
+}
+
+.car-description {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.car-details {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.car-actions {
+  text-align: right;
+}
+
+.car-actions button {
+  margin-left: 10px;
+}

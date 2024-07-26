@@ -18,16 +18,16 @@ export class AdminService {
     });
   }
 
-  getAllCars():Observable<any>{
-    return this.http.get(BASIC_URL + "/api/admin/cars",{
+  getAllCars(): Observable<any> {
+    return this.http.get(`${BASIC_URL}/api/admin/cars`, {
       headers: this.createAuthorizationHeader()
-    })
+    });
   }
 
-  getCarBookings():Observable<any>{
-    return this.http.get(BASIC_URL + "/api/admin/car/bookings",{
+  getCarBookings(): Observable<any> {
+    return this.http.get(`${BASIC_URL}/api/admin/car/bookings`, {
       headers: this.createAuthorizationHeader()
-    })
+    });
   }
 
   changeBookingStatus(bookingId: number, status: string): Observable<any> {
@@ -35,16 +35,21 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     });
   }
-  
 
-  deleteCar(id: number): Observable<any>{
-    return this.http.delete(BASIC_URL + "/api/admin/car/" + id,{
+  searchCar(searchCarDto: any): Observable<any> {
+    return this.http.post(`${BASIC_URL}/api/admin/car/search`, searchCarDto, {
       headers: this.createAuthorizationHeader()
     });
   }
 
-  getCarById(id: number):Observable<any>{
-    return this.http.get(BASIC_URL + "/api/admin/car/" + id, {
+  deleteCar(id: number): Observable<any> {
+    return this.http.delete(`${BASIC_URL}/api/admin/car/${id}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  getCarById(id: number): Observable<any> {
+    return this.http.get(`${BASIC_URL}/api/admin/car/${id}`, {
       headers: this.createAuthorizationHeader()
     });
   }
@@ -54,7 +59,7 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     });
   }
-  
+
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
     const token = StorageService.getToken();
@@ -68,4 +73,3 @@ export class AdminService {
     return authHeaders;
   }
 }
-

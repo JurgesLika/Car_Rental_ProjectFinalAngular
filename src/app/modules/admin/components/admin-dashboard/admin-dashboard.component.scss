@@ -1,58 +1,62 @@
-.container {
-    background-color: antiquewhite;
-    padding-top: 10px;
-  
-    .child {
-      margin-top: 10px;
-  
-      nz-row {
-        display: flex;
-        align-items: center;
-  
-        nz-col {
-          &.profile-col {
-            flex: 0 0 200px;
-            max-width: 200px;
-  
-            .profile {
-              height: 130px;
-              width: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-            }
-          }
-  
-          &.details-col {
-            flex: 1;
-            padding-left: 20px;
-  
-            h2 {
-              cursor: pointer;
-              color: rgb(39, 49, 194);
-              margin: 0;
-              font-size: 1.5rem;
-            }
-  
-            p {
-              margin: 10px 0;
-            }
-  
-            hr {
-              border: none;
-              border-top: 1px solid #ccc;
-              margin: 10px 0;
-            }
-  
-            h5 {
-              margin: 10px 0;
-  
-              b {
-                font-weight: bold;
-              }
-            }
-          }
-        }
-      }
+.car-container {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+  height: 100px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.car-title {
+  font-size: 18px;
+  color: rgb(50, 27, 177);
+  cursor: pointer;
+}
+
+.car-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.car-details {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.car-actions {
+  text-align: right;
+}
+
+.car-actions button {
+  margin-left: 10px;
+}
+p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+
+  .stat-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: bold;
     }
   }
-  
+}

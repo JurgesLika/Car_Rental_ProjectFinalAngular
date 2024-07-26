@@ -7,13 +7,15 @@ import { BookCarComponent } from './components/book-car/book-car.component';
 import { NgZorroImportsModule } from '../../NgZorroImportsModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
+import { SearchCarComponent } from './components/search-car/search-car.component';
 
 
 @NgModule({
   declarations: [
     CustomerDashboardComponent,
     BookCarComponent,
-    MyBookingsComponent
+    MyBookingsComponent,
+    SearchCarComponent
   ],
   imports: [
     CommonModule,

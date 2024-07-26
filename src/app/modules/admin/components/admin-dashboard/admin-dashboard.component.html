@@ -1,30 +1,26 @@
-<div style="background-color: rgb(197, 202, 224);">
-    <div style="padding-top: 10px;"></div>
-    
-    <div style="margin-top: 10px;" class="child" *ngFor="let car of cars"  >
-      <div nz-row>
-        <div nz-col nzSpan="8">
-          <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" src="{{car.processedImg}}"
-               alt="profile"/>
-        </div>
-        <div nz-col nzSpan="16">
-          <h2 style="cursor: pointer; color:rgb(50, 27, 177);">
-            {{car.brand}}-{{car.name}}
-          </h2>
-          <p>{{car.description}}</p>
-          <hr>
-          <h5>Price : <b>${{car.price}}</b> - Transmission : 
-            <b>{{car.transmission}}</b> - Type : <b>{{car.type}}</b> - Year : <b>{{car.year | date: 'yyyy'}}</b>
-          </h5>
-          <hr>
-          <div style="float: right;">
-            <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" 
-            (click)="deleteCar(car.id)">Delete</button>
-            <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" 
-            routerLink="/admin/car/{{car.id}}" nzDanger>Update</button>
-          </div>
+<div class="admin-info">
+  <h2>Welcome to the Car Rental Admin Panel</h2>
+  <p>Manage your car rental service efficiently from here. Use the navigation links above to access different sections.</p>
+
+<div style="background-color: rgb(197, 202, 224); padding: 10px;">
+  <div *ngFor="let car of cars" class="car-container">
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <img class="profile" src="{{car.processedImg}}" alt="profile" />
+      </div>
+      <div nz-col nzSpan="16">
+        <h2 class="car-title">{{car.brand}} - {{car.name}}</h2>
+        <p class="car-description">{{car.description}}</p>
+        <hr />
+        <h5 class="car-details">
+          Price: <b>${{car.price}}</b> - Transmission: <b>{{car.transmission}}</b> - Type: <b>{{car.type}}</b> - Year: <b>{{car.year | date: 'yyyy'}}</b>
+        </h5>
+        <hr />
+        <div class="car-actions">
+          <button nzSize="small" nz-button nzType="primary" (click)="deleteCar(car.id)">Delete</button>
+          <button nzSize="small" nz-button nzType="primary" routerLink="/admin/car/{{car.id}}" nzDanger>Update</button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

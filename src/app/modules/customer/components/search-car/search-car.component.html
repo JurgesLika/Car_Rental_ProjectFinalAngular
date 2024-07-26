@@ -1,0 +1,64 @@
+<div class="inner-content">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+        <div class="dashboard-filter">
+            <div class="filter-grid" [formGroup]="searchCarForm">
+                <div class="filter-select-dropdown filter-filds-width">
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="gender">Brand</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input is Required!!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Brand" formControlName="brand">
+                                <nz-option *ngFor="let brand of listOfBrands" nzLabel="{{brand}}"
+                                    nzValue="{{brand}}"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="gender">Type</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input is Required!!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type">
+                                <nz-option *ngFor="let type of listOfType" nzLabel="{{type}}"
+                                    nzValue="{{type}}"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="gender">Transmission</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input is Required!!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Transmission" formControlName="transmission">
+                                <nz-option *ngFor="let transmission of listOfTransmission" nzLabel="{{transmission}}"
+                                    nzValue="{{transmission}}"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="filter-select-dropdown filter-filds-width">
+                    <button class="filterBtn" nz-button nzType="primary" (click)="searchCar()">Search
+                        Car</button>
+                </div>
+            </div>
+        </div>
+    </nz-spin>
+</div>
+
+<div style="background-color: rgb(141, 157, 189);">
+    <div class="child" style="padding-bottom: 30px;" *ngFor="let car of cars">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <img class="profile" style="height: 130px; width: 220px; border-radius: 10px;" [src]="car.processedImg"
+                    alt="profile" />
+            </div>
+            <div nz-col nzSpan="16">
+                <h2 style="cursor: pointer; color:blue">
+                    {{car.brand}} - {{car.name}}</h2>
+                    <p>{{car.description}}</p>
+                    <hr>
+                    <h5>Price : <b>${{car.price}}</b> - Transmission :
+                      <b>{{car.transmission}}</b> - Type : <b>{{car.type}} </b> - Year : <b>{{car.year | date: 'yyyy'}}</b>
+                    </h5>
+            </div>
+        </div>
+    </div>
+</div>

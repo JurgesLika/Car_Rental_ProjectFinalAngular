@@ -1,0 +1,125 @@
+.inner-content {
+    .dashboard-filter {
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      .filter-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+  
+        .filter-select-dropdown {
+          flex: 1;
+          min-width: 200px;
+  
+          nz-form-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+  
+            nz-form-label {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+  
+            nz-form-control {
+              nz-select {
+                width: 100%;
+              }
+            }
+          }
+        }
+  
+        .filterBtn {
+          align-self: flex-end;
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #1890ff;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #40a9ff;
+          }
+        }
+      }
+    }
+  }
+  
+  .car-listing {
+    background-color: antiquewhite;
+    padding: 20px;
+  
+    .child {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+  
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+  
+      nz-row {
+        display: flex;
+        align-items: center;
+  
+        nz-col {
+          display: flex;
+          align-items: center;
+  
+          &:first-child {
+            img.profile {
+              height: 130px;
+              width: 220px;
+              border-radius: 10px;
+              object-fit: cover;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+          }
+  
+          &:last-child {
+            h2 {
+              cursor: pointer;
+              color: blue;
+              font-size: 24px;
+              margin-bottom: 10px;
+  
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+  
+            p {
+              font-size: 16px;
+              color: #555;
+              margin-bottom: 10px;
+            }
+  
+            hr {
+              border: 0;
+              height: 1px;
+              background: #ddd;
+              margin: 10px 0;
+            }
+  
+            h5 {
+              font-size: 16px;
+              color: #333;
+  
+              b {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

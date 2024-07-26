@@ -1,101 +1,86 @@
-/* Variables for colors and fonts */
-$primary-color: #ff4d4f;
-$secondary-color: #1890ff;
-$font-family: 'Arial', sans-serif;
-
-/* Main wrapper for background image */
 .main-wrapper {
-  background-image:image();
-  background-size: cover;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
-  &.admin-logged-in, &.customer-logged-in {
-    .main-header {
-      background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #001529;
+    color: #fff;
+
+    .navbar-title a {
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
     }
-  }
-}
 
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .nav-links {
+      display: flex;
+      align-items: center;
 
-  .navbar-title a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $primary-color;
-    text-decoration: none;
-    transition: color 0.3s ease;
+      a[nz-button] {
+        color: #fff;
+        margin-left: 20px;
 
-    &:hover {
-      color: $secondary-color;
-    }
-  }
+        &:hover {
+          color: #1890ff;
+        }
 
-  .nav-links {
-    a {
-      font-size: 1rem;
-      margin-left: 1rem;
-      color: $primary-color;
-      transition: color 0.3s ease;
+        &.active {
+          color: #40a9ff;
+          font-weight: bold;
+        }
 
-      &:hover {
-        color: $secondary-color;
+        nz-icon {
+          margin-right: 8px;
+        }
       }
     }
   }
-}
-
-.content-wrapper {
-  flex-grow: 1;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 2rem;
-  border-radius: 10px;
-}
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 
   .content-wrapper {
     flex: 1;
+    padding: 20px;
+    background-color: #f0f2f5;
   }
 
   .main-footer {
-    background-color: #f5f5f5;
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid #ddd;
+    background-color: #001529;
+    color: #fff;
+    padding: 20px;
 
     .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       .footer-links {
         a {
-          margin: 0 10px;
-          color: #1890ff;
+          color: #fff;
+          margin-left: 20px;
+          text-decoration: none;
 
           &:hover {
-            text-decoration: underline;
+            color: #1890ff;
           }
         }
       }
     }
   }
+
+  &.admin-logged-in {
+    .main-header .navbar-title a {
+      content: 'Admin Panel';
+    }
+  }
+
+  &.customer-logged-in {
+    .main-header .navbar-title a {
+      content: 'Customer Panel';
+    }
+  }
 }
-
-
-
 
